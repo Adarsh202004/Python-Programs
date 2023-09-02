@@ -1,23 +1,30 @@
-#Mean,Variance and standard deviation 
- n = int(input("Enter the number students: ")) 
- list1 = [] 
- for i in range(n): 
- marks = int(input("Enter marks of each student in python: ")) 
- list1.append(marks) 
- print("List containing marks of student: ", list1) 
- print("-"*50) 
- # Finding Mean 
- sum = 0 # Initialize 
- for i in list1: 
- sum += i 
- print("Sum of all the elements in the list: ", sum) 
- x_bar = sum/len(list1) 
- print("Mean: ", x_bar) 
- # Finding Variance 
- var = 0 # Initialize 
- for i in list1: 
- var = var + ((i - x_bar)**2)/len(list1) 
- print("Variance: ", var) 
- # Finding Standard Deviation 
- std_dev = var**0.5 
- print("Standard Deviation: ", std_dev)
+name = input("Enter the student name: ")
+usn = input("Enter the student USN: ")
+phy = int(input("Enter the marks obtained in Physics: "))
+che = int(input("Enter the marks obtained in Chemistry: "))
+mat = int(input("Enter the marks obtained in Mathematics: "))
+max_marks = 300
+print(30 * "*")
+
+print("Name of the Student:", name)
+print("Student USN:", usn)
+print(30 * "*")
+
+total = phy + che + mat
+print("The total marks scored by the student in Physics", phy, "Chemistry", che, "Mathematics", mat, "is", total)
+print(30 * "*")
+
+percent = (total/max_marks) * 100
+print("Percentage of the Student:", round(percent))
+
+# (b) Develop a program to reas the name and year of birth of a person. Display whether the person is a senior citizen or not.
+import datetime
+name = input("Enter the name of the person: ")
+birth_year = int(input("Enter the year of birth of the person: "))
+today = datetime.date.today()
+year = today.year
+age = year - birth_year
+if age >= 60:
+print(name + "is a senior citizen")
+else:
+print(name + "is not a senior citizen")
